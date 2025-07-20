@@ -8,14 +8,13 @@ class Solution:
     def containsDuplicate(self, nums: List[int]) -> bool:
 
         # Define empty list
-        checked_nums = []
+        checked_nums = set()
 
         # Run loop throught the given list
         for num in nums:
             if num in checked_nums:
                 return True
-            else:
-                checked_nums.append(num)
 
-        # If all items checked return False
+            checked_nums.add(num)
+
         return False
