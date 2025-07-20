@@ -6,21 +6,22 @@ Given two strings s and t, return true if t is an anagram of s, and false otherw
 
 class Solution:
 
-    def string_map(self, string: str):
+    @staticmethod
+    def string_map(string: str):
         """
         Build hashmap of the string
         :param string: Some text
         :return: Dictionary with symbols counted
         """
 
-        map = {}
+        char_count = {}
 
         # Go through the string
-        for letter in list(string):
+        for letter in string:
             # Count letters
-            map[letter] = map.get(letter, 0) + 1
+            char_count[letter] = char_count.get(letter, 0) + 1
 
-        return map
+        return char_count
 
     def isAnagram(self, s: str, t: str) -> bool:
 
